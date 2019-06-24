@@ -1,0 +1,16 @@
+2019-06-12 15:06:730 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:764 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:518 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:547 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:75 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:115 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:443 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:488 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:247 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:275 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:284 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:308 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:350 INFO  ServiceHooks:34 - edit menu item is Failed
+2019-06-12 15:06:812 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-06-12 15:06:830 INFO  WaitHelper:24 - element is visible..
+2019-06-12 15:06:401 INFO  ServiceHooks:43 - delete test is pass

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [BDD Test Suite]">
+  <test name="ChefsPage Test">
+    <classes>
+      <class name="com.cucumberFramework.testRunner.ChefOrderDetails"/>
+    </classes>
+  </test> <!-- ChefsPage Test -->
+  <test name="ChefsPage Test(failed)">
+    <classes>
+      <class name="com.cucumberFramework.testRunner.ChefOrderDetails">
+        <methods>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+          <include name="testDownClass"/>
+        </methods>
+      </class> <!-- com.cucumberFramework.testRunner.ChefOrderDetails -->
+    </classes>
+  </test> <!-- ChefsPage Test(failed) -->
+</suite> <!-- Failed suite [BDD Test Suite] -->
