@@ -21,9 +21,9 @@ public class TestBase {
 	protected int time = 2000;
 	protected int time1 = 1000;
 	protected int time2 = 500;
-	protected String adminStaging = "https://admin.tryhungry.com/" ;
-	protected String marketPlaceStaging = "https://tryhungry.com/";
-	protected String opsSite = "https://ops.tryhungry.com/";
+	protected String adminStaging = "https://admin.staging.tryhungry.com/" ;
+	protected String marketPlaceStaging = "https://staging.tryhungry.com/";
+	protected String opsSite = "https://ops.staging.tryhungry.com/";
 
 	public String orderAmount;
 	
