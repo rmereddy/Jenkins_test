@@ -34,7 +34,7 @@ And i click save order
 Then i should successfully place my order
 
 
-@day
+@day @dailyTest
 Scenario: verify sending day of menu email to client
 Given i am on the sales page
 When i search for the order
@@ -46,7 +46,8 @@ When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the day of menu email "Your menu and chef for today’s HUNGRY catering"
 
-Scenario: delete chef order email
+@dailyTest
+Scenario: delete day of menu email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email check box

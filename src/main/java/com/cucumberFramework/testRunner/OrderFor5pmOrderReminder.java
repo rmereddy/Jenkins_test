@@ -10,7 +10,7 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features = "src/test/resources/features", glue = { "com/cucumberFramework/stepdefinitions" },tags = {"@Test-5PM-AutoRemiderToChef"}, plugin = { "pretty", "html:target/cucumber-reports/cucumber-pretty",
+@CucumberOptions(features = "src/test/resources/features", glue = { "com/cucumberFramework/stepdefinitions" },tags = {"@Test-5PM-AutoRemiderToChef,@5pm"}, plugin = { "pretty", "html:target/cucumber-reports/cucumber-pretty",
 		"json:target/cucumber-reports/CucumberTestReport.json", "rerun:target/cucumber-reports/rerun.txt" }, monochrome = true)
 public class OrderFor5pmOrderReminder {
 	

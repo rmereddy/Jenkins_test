@@ -1,16 +1,27 @@
-2019-06-12 15:06:730 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:764 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:518 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:547 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:75 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:115 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:443 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:488 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:247 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:275 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:284 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:308 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:350 INFO  ServiceHooks:34 - edit menu item is Failed
-2019-06-12 15:06:812 INFO  WaitHelper:21 - waiting for element visibilityOf..
-2019-06-12 15:06:830 INFO  WaitHelper:24 - element is visible..
-2019-06-12 15:06:401 INFO  ServiceHooks:43 - delete test is pass
+2019-07-29 10:07:06 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:139 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:451 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:469 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:473 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:505 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:938 INFO  ServiceHooks:43 - add new order is pass
+2019-07-29 10:07:248 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:343 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:756 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:773 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:55 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:671 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:698 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:721 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:737 INFO  ServiceHooks:43 - edit existing order is pass
+2019-07-29 10:07:308 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:331 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:512 INFO  ServiceHooks:34 - verify chnages to order on chef dash is Failed
+2019-07-29 10:07:484 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:525 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:956 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:974 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:238 INFO  ServiceHooks:43 - delete order is pass
+2019-07-29 10:07:533 INFO  WaitHelper:21 - waiting for element visibilityOf..
+2019-07-29 10:07:560 INFO  WaitHelper:24 - element is visible..
+2019-07-29 10:07:859 INFO  ServiceHooks:43 - verify canceled order on chef dash is pass

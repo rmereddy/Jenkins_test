@@ -46,7 +46,7 @@ public class checkoutPage {
 	By placeOrder = By.cssSelector(".place-order");
 	By orderConfirmation = By.cssSelector(".marketplace-title");
 	By myAccount = By.cssSelector(".modal-form-container > div:nth-child(1) > div:nth-child(1) > a:nth-child(4)");
-	By confirmationPageOrderNumber = By.cssSelector(".market-place-title-container > div:nth-child(3) > p:nth-child(1) > span:nth-child(1)");
+	By confirmationPageOrderNumber = By.cssSelector("#app > div > div:nth-child(2) > div > div > div:nth-child(2) > div.section-container.receipt-page > div > div.market-place-title-container.receipt-title-container > div > p > span");
 	
 	
 	

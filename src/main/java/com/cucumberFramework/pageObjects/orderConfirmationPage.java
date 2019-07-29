@@ -11,7 +11,7 @@ public class orderConfirmationPage {
 
 	WaitHelper waitHelper;
 	
-	By orderNumber = By.cssSelector(".market-place-title-container > div:nth-child(3) > p:nth-child(1)");
+	By orderNumber = By.cssSelector("#app > div > div:nth-child(2) > div > div > div:nth-child(2) > div.section-container.receipt-page > div > div.market-place-title-container.receipt-title-container > div > p > span");
 	By numberOfpeople = By.cssSelector("span.bold:nth-child(2)");
 	By date = By.cssSelector("span.bold:nth-child(3)");
 	By time = By.cssSelector("span.bold:nth-child(4)");
@@ -43,5 +43,7 @@ public class orderConfirmationPage {
 		this.driver = driver;
 		waitHelper = new WaitHelper(driver);
 	}
+	
+	
 
 }

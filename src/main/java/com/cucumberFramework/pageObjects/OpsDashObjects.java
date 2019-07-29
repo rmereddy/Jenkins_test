@@ -18,10 +18,10 @@ public class OpsDashObjects {
 	
 	By email = By.xpath("//input[@placeholder='Email']");
 	By password = By.xpath("//input[@placeholder='Password']");
-	By rosslynButton = By.xpath("//label[text()='Rosslyn']");
-	By phillyButton = By.xpath("//label[text()='Philadelphia']");
-	By atlantaButton = By.xpath("//label[text()='Atlanta']");
+	By locationDropdown = By.className("login-selector");
 	By loginButton = By.className("login-button");
+	By updatesAlert = By.className("mobile-container__inner image-slider-container update-modal");
+	By closeUpdatesAlert = By.className("close");
 	By topTaps = By.className("react-tabs__tab");
 	By cateringsTab = By.id("react-tabs-0");
 	By dateBox = By.className("flatpickr-input");
@@ -98,6 +98,11 @@ public class OpsDashObjects {
 		return driver.findElements(orderOverviewRow   );
 	}
 	
+	public WebElement updatesAlert ()
+	{
+		return driver.findElement(updatesAlert   );
+	}
+	
 	public List<WebElement> orderOverviewOrderNumber ()
 	{
 		return driver.findElements(orderOverviewOrderNumber   );
@@ -112,6 +117,11 @@ public class OpsDashObjects {
 	public List<WebElement> orderRow ()
 	{
 		return driver.findElements(orderRow   );
+	}
+	
+	public WebElement closeUpdatesAlert ()
+	{
+		return driver.findElement(closeUpdatesAlert  );
 	}
 	
 	
@@ -443,21 +453,10 @@ public class OpsDashObjects {
 	}
 	
 
-	public WebElement atlantaButton ()
-	{
-		return driver.findElement(atlantaButton   );
-	}
-	
 
-	public WebElement phillyButton ()
+	public WebElement locationDropdown ()
 	{
-		return driver.findElement(phillyButton   );
-	}
-	
-
-	public WebElement rosslynButton ()
-	{
-		return driver.findElement(rosslynButton   );
+		return driver.findElement(locationDropdown   );
 	}
 	
 

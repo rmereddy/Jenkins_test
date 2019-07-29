@@ -101,7 +101,7 @@ public class customizeMenuSmoke extends TestBase{
     @And("^i enter my head count$")
     public void i_enter_my_head_count() throws Throwable {
     	cus.howMany().click();
-       cus.howMany().sendKeys("10");
+       cus.howMany().sendKeys("30");
        Thread.sleep(time1);
        
 

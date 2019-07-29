@@ -52,8 +52,8 @@ Then i should successfully delete the order
 
 
 
-
-Scenario: place marketplace order
+@marketplaceOps
+Scenario: place marketplace order show up in ops dash
 Given i navigate to "https://staging.tryhungry.com/"
 Given i am on the login page
 When i enter my email

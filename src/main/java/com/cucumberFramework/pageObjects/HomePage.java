@@ -26,7 +26,7 @@ public class HomePage {
     By homepageZipCode = By.id("zipcode");
     By seeMenusButton = By.cssSelector("button.cta.shadow-md");
 	By callMeNowLink = By.linkText("Call Me Now");
-	By menus = By.cssSelector("p.basic-link");
+	By menus = By.className("menu-dropdown");
 	By menusDC = By.xpath("//a[contains(text(),'Washington, DC')]");
 	By menusPA = By.cssSelector(".menu-dropdown__inner > a:nth-child(2)");
 	By mission = By.xpath("//a[text() = 'Mission']");

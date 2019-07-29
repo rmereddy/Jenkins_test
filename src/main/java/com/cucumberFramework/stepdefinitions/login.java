@@ -40,7 +40,7 @@ public class login extends TestBase{
     public void i_am_on_the_login_page() throws Throwable {
     	
 
-		    homepage.loginSignUpButton().click();
+		    login.myAccount().click();
 
 		
     	

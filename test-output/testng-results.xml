@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="51795" started-at="2019-06-12T19:57:49Z" finished-at="2019-06-12T19:58:41Z">
+  <suite name="Default suite" duration-ms="92828" started-at="2019-07-29T14:43:29Z" finished-at="2019-07-29T14:45:02Z">
     <groups>
       <group name="cucumber">
         <method signature="TestRunner.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="feature" class="com.cucumberFramework.testRunner.TestRunner"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Default test" duration-ms="51795" started-at="2019-06-12T19:57:49Z" finished-at="2019-06-12T19:58:41Z">
+    <test name="Default test" duration-ms="92828" started-at="2019-07-29T14:43:29Z" finished-at="2019-07-29T14:45:02Z">
       <class name="com.cucumberFramework.testRunner.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="setUpClass" is-config="true" duration-ms="248" started-at="2019-06-12T15:57:49Z" finished-at="2019-06-12T15:57:49Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="setUpClass" is-config="true" duration-ms="279" started-at="2019-07-29T10:43:29Z" finished-at="2019-07-29T10:43:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="feature" duration-ms="51284" started-at="2019-06-12T15:57:50Z" description="Runs cucmber Features" data-provider="features" finished-at="2019-06-12T15:58:41Z">
+        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="feature" duration-ms="92162" started-at="2019-07-29T10:43:30Z" description="Runs cucmber Features" data-provider="features" finished-at="2019-07-29T10:45:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[chef's page]]>
+                <![CDATA[chef dash]]>
               </value>
             </param>
           </params>
           <exception class="cucumber.runtime.CucumberException">
             <message>
-              <![CDATA[java.lang.AssertionError]]>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.AssertionError
+              <![CDATA[cucumber.runtime.CucumberException: java.lang.AssertionError: expected [true] but found [false]
 	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
 	at com.cucumberFramework.testRunner.TestRunner.feature(TestRunner.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -54,16 +54,20 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.AssertionError
-	at com.cucumberFramework.stepdefinitions.chefsPage.i_should_successfully_edit_the_new_menu_item(chefsPage.java:214)
-	at ✽.Then i should successfully edit the new menu item(Admin/chefsPage/editMenuItem.feature:80)
+Caused by: java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at com.cucumberFramework.stepdefinitions.ChefDash.i_should_see_changes_made_to_my_order_on_the_default_view_something_something_something_something(ChefDash.java:365)
+	at ✽.Then i should see changes made to my order on the default view "Dessert" "300" "16" "14" "testing chef notes for changes"(ChefDash/ChangesMadeOnOrder.feature:68)
 ]]>
             </full-stacktrace>
           </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="testDownClass()[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="testDownClass" is-config="true" duration-ms="51" started-at="2019-06-12T15:58:41Z" finished-at="2019-06-12T15:58:41Z">
+        <test-method status="PASS" signature="testDownClass()[pri:0, instance:com.cucumberFramework.testRunner.TestRunner@77cd7a0]" name="testDownClass" is-config="true" duration-ms="73" started-at="2019-07-29T10:45:02Z" finished-at="2019-07-29T10:45:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDownClass -->

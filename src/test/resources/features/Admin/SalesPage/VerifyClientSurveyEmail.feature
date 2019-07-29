@@ -33,13 +33,25 @@ And i enter the first entree quantity
 And i enter the second entree quantity
 And i click save order
 Then i should successfully place my order
+
+@dailyTest @sendSurveyEmailToClient
+Scenario: manually send survey email
+Given i navigate to admin login
+When i login with "tahiru@tryhungry.com"
+And my password as "tahiru123"
+Then i should successfully login to the application
+Given i am on the admin homepage
+When i click on the sales link
+Then i should successfuly navigate to the sales page
+Given i am on the sales page
+When i search for the order
 And i click on the send survey to client panel
 And i click the email order survey button
 Then i should be able to send order survey successfully
 
 
 
-
+@dailyTest
 Scenario: verify client survey email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
@@ -47,7 +59,7 @@ And i click on the first email
 Then i should verify that it's the client survey email "How are we doing? Please send us your feedback"
 
 
-
+@dailyTest
 Scenario: verify client survey email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
@@ -55,7 +67,7 @@ And i click on the first email
 Then i should verify that it's the client survey email "How are we doing? Please send us your feedback"
 
 
-@submitSurvey
+@submitSurvey @dailyTest
 Scenario: fill and submit survey
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
@@ -67,7 +79,7 @@ And i fill survey and click the submit button
 Then i should successfully summit my survey
 
 
-
+@dailyTest
 Scenario: delete client survey email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
@@ -76,7 +88,7 @@ Then i should delete the chef order email
 
 
 
-@sendSurveyEmailToClient
+@sendSurveyEmailToClient 
 Scenario: delete order
 Given i navigate to admin login
 When i login with "tahiru@tryhungry.com"

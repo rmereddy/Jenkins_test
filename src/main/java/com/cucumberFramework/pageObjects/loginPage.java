@@ -20,9 +20,7 @@ public class loginPage {
 	By createAccount = By.cssSelector("a.round-button");
 	By close = By.cssSelector(".contact-form-container__inner--close-button");
 	By signInHeader = By.cssSelector("div.contact-form-container__inner--column:nth-child(1) > div:nth-child(1) > h2:nth-child(1)");
-	By myAccount = By.xpath("//a[contains(text(),'My Account')]");
-	
-
+	By myAccount = By.cssSelector("#app > div > div.homepage-container > header > nav > div:nth-child(7) > a");
 	
 	
 	

@@ -51,7 +51,7 @@ And i enter the manu item name "test menu item"
 And i enter the menu item ingredients "test item"
 And i enter the menu item description "this item is for testing purposes"
 And i enter the menu item servings per package "40"
-And i select the menu item serving utensils "Spoon"
+And i select the menu item serving utensils "Serving Spoon"
 And i enter the menu item chefs price "10000"
 And i enter the menu item market price "10000"
 And i upload the menu item meal image
