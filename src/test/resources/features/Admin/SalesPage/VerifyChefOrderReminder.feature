@@ -1,4 +1,4 @@
-@chefOrderReminderEmail
+@chefOrderReminderEmail 
 Feature: sales page
 in order for an admin to search, view, add or edit an order,
 the user with admin access will have to login and navigate to the sales page

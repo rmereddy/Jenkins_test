@@ -1,5 +1,6 @@
 @addNewCreditCard @myAccount @MarketplaceEnd2End @regression
-Feature: In order for a user to be able to add a credit card to their account
+Feature: Add new credit card
+In order for a user to be able to add a credit card to their account
 the user has to navigate to their account profile and use the add new card button to add a card
 
 @addCard

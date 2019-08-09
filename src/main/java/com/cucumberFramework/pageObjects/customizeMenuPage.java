@@ -23,7 +23,9 @@ public class customizeMenuPage {
 	By dayTen = By.xpath("//div[text() = '10']");
 	By dayFifteen = By.xpath("//div[text() = '15']");
 	By dayThirtyFirst = By.xpath("//div[text() = '31']");
-	By howMany = By.cssSelector("#number-people");
+	By howMany = By.id("number-people");
+	By numberOfPortions = By.id("numberOfEntrees");
+	By recomendedPortions = By.id("recommendedPortion");
 	By setUpTime = By.cssSelector(".form-control");
 	By setUpHoursUp = By.cssSelector("div.rdtCounter:nth-child(1) > span:nth-child(1)");
 	By setUpHoursDown = By.cssSelector("div.rdtCounter:nth-child(1) > span:nth-child(3)");
@@ -54,7 +56,7 @@ public class customizeMenuPage {
 	By tipBox = By.cssSelector("div.pricing:nth-child(4) > input:nth-child(2)");
 	By salesTax = By.cssSelector("div.pricing:nth-child(6) > span:nth-child(2)");
 	By invoiceTotal = By.cssSelector("span.bold");
-	By continueButton = By.cssSelector("#app > div > div:nth-child(2) > div > div:nth-child(1) > div > div.modal-menu-card > div.modal-menu-card__inner > div.customize-menu-container > div.order-details-overview > div.continue-to-checkout > button");
+	By continueButton = By.className("continue-button");
 	By continueButton2 = By.cssSelector("div.continue-to-checkout:nth-child(7) > button:nth-child(1)");
 	By continueButton3 = By.cssSelector("div.continue-to-checkout:nth-child(4) > button:nth-child(1)");
 	By continueButton4 = By.cssSelector("#app > div > div:nth-child(2) > div > div:nth-child(1) > div > div.modal-menu-card > div.modal-menu-card__inner > div.order-confirmation-container > div > div > button");
@@ -168,6 +170,19 @@ public class customizeMenuPage {
 	{
 		return driver.findElement(howMany );
 	}
+	
+	
+	public WebElement numberOfPortions ()
+	{
+		return driver.findElement(numberOfPortions );
+	}
+	
+	
+	public WebElement recomendedPortions ()
+	{
+		return driver.findElement(recomendedPortions );
+	}
+	
 	
 	public WebElement setUpTime ()
 	{

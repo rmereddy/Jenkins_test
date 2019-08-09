@@ -21,9 +21,12 @@ public class TestBase {
 	protected int time = 2000;
 	protected int time1 = 1000;
 	protected int time2 = 500;
-	protected String adminStaging = "https://admin.beta.tryhungry.com/" ;
-	protected String marketPlaceStaging = "https://beta.tryhungry.com/";
-	protected String opsSite = "https://ops.beta.tryhungry.com/";
+	protected String adminStaging = "https://admin.tryhungry.com/" ;
+	protected String marketPlaceStaging = "https://tryhungry.com/";
+	protected String opsSite = "https://ops.tryhungry.com/";
+	protected String chefDash = "https://chefs.tryhungry.com/";
+
+
 	public String orderAmount;
 	
 	public WebDriver selectBrowser(String browser) {

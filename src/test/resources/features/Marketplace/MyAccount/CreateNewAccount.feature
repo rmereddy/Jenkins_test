@@ -1,5 +1,6 @@
 @createNewAccount @myAccount @MarketplaceEnd2End @regression
-Feature: In order for a user to be able to create an account
+Feature: create new account
+ In order for a user to be able to create an account
 the user has to navigate to the login page and use the create account button to create an account
 
 

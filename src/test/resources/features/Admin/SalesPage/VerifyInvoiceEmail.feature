@@ -32,7 +32,7 @@ And i click save order
 Then i should successfully place my order
 
 
-@sendInvoiceEmail
+@sendInvoiceEmail @dailyTest
 Scenario: verify invoice email
 Given i navigate to admin login
 When i login with "tahiru@tryhungry.com"
@@ -47,25 +47,35 @@ And i click on the invoice panel
 And i click on the invoice email button
 Then i should be able to successfully send an invoice email
 
+@dailyTest
 Scenario: Invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
+@dailyTest
 Scenario: Invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
+@dailyTest
 Scenario: Invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
-@sendFinalInvoice
+@dailyTest
+Scenario: delete invoice email
+Given i navigate to the client test email "https://mail.protonmail.com/login"
+When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
+And i click on the first email check box
+Then i should delete the chef order email
+
+@sendFinalInvoice @dailyTest
 Scenario: verify final invoice email
 Given i navigate to admin login
 When i login with "tahiru@tryhungry.com"
@@ -81,29 +91,29 @@ And i click on the final invoice check box
 And i click on the invoice email button
 Then i should be able to successfully send a final invoice email
 
-
+@dailyTest
 Scenario: Final invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
-
+@dailyTest
 Scenario: Final invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
-
+@dailyTest
 Scenario: Final invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email
 Then i should verify that it's the invoice email "Your invoice"
 
-
-Scenario: delete chef order email
+@dailyTest
+Scenario: delete invoice email
 Given i navigate to the client test email "https://mail.protonmail.com/login"
 When i login to the test email account "hungryemail@protonmail.com" "gotmoney"
 And i click on the first email check box

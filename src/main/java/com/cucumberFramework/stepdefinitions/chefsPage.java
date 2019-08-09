@@ -206,6 +206,18 @@ public class chefsPage extends TestBase{
         
     }
 
+    
+    
+    @Then("^i should successfully add the jests menu item and see that it is live$")
+    public void i_should_successfully_add_the_jests_menu_item_and_see_that_it_is_live() throws Throwable {
+        assert(chef.menuItemsEnttree().getText().equalsIgnoreCase("salad")|| chef.menuItemsEnttree().getText().equalsIgnoreCase("burgerKing"));
+        Thread.sleep(time1);
+        chef.chefProfileOverview2().click();
+        Thread.sleep(time2);
+        
+    }
+    
+    
     @Then("^i should successfully edit the new menu item$")
     public void i_should_successfully_edit_the_new_menu_item() throws Throwable {
     	waitHelper.WaitForElement(chef.menuItemsEnttree(), 10);
@@ -587,7 +599,7 @@ public class chefsPage extends TestBase{
 
     @And("^i choose the menu item packaging$")
     public void i_choose_the_menu_item_packaging() throws Throwable {
-        chef.individualBoxedLunches().click();
+        chef.pieBox().click();
     }
 
 
@@ -711,6 +723,18 @@ public class chefsPage extends TestBase{
         Thread.sleep(1000);
         chef.newMenuCardMainDropdown().click();
         chef.firstSelectChoice().click();
+        
+        
+    }
+    
+    @And("^i select second menu card entree$")
+    public void i_select_second_menu_card_entree() throws Throwable {
+        chef.addEntree().click();
+        Thread.sleep(1000);
+        chef.newMenuCardMainDropdown().click();
+        chef.firstSelectChoice().click();
+        
+        
     }
 
     @And("^i change menu card name \"([^\"]*)\"$")

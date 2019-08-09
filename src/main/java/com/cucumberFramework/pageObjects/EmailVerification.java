@@ -12,7 +12,6 @@ public class EmailVerification {
 
 		WaitHelper waitHelper;
 		
-		
 		By username = By.id("username");
 		By password = By.id("password");
 		By loginButton = By.id("login_btn");
@@ -41,10 +40,14 @@ public class EmailVerification {
 		
 		
 		
+		
 		public EmailVerification(WebDriver driver) {
 			this.driver = driver;
 			waitHelper = new WaitHelper(driver);
 		}
+		
+
+		
 		
 		public WebElement loadMessageBody()
 		{

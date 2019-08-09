@@ -33,6 +33,7 @@ And i enter the second entree quantity
 And i click save order
 Then i should successfully place my order
 
+@dailyTest
 Scenario: verify sending chef order details
 Given i am on the sales page
 When i search for the order

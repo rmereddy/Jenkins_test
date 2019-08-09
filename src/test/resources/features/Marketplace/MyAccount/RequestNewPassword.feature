@@ -1,5 +1,6 @@
 @newPassword @myAccount @MarketplaceEnd2End @regression
-Feature: In order for a user who has forgotten their password to be able to request a new password
+Feature: Request new password
+In order for a user who has forgotten their password to be able to request a new password
 the user has to navigate to the login page and use the forgot password link
 
 Scenario: request a temp password

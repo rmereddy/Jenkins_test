@@ -3,6 +3,7 @@ package com.cucumberFramework.stepdefinitions;
 import static org.testng.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.apache.http.impl.conn.tsccm.WaitingThreadAborter;
 import org.openqa.selenium.By;
@@ -48,7 +49,8 @@ public class SalesPage extends TestBase{
     String order;
 
 
-    
+    Calendar calendar = Calendar.getInstance();
+    int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK); 
     
     Actions mouse = new Actions(driver);
     
@@ -111,7 +113,7 @@ public class SalesPage extends TestBase{
 			System.out.println(sales.orderOverviewClientName().getText());
 			System.out.println(sales.orderOverviewClientName1().getText());
 			System.out.println(sales.orderDetailsChefName().getText());
-			assert(sales.orderOverviewServiceInstructions().getText().contains("testing")||sales.orderDetailsChefInstructions().getText().contains("testing"));
+		//	assert(sales.orderOverviewServiceInstructions().getText().contains("testing")||sales.orderDetailsChefInstructions().getText().contains("testing"));
 	        assert(sales.orderOverviewClientName().getText().contains("Tahiru") || sales.orderOverviewClientName1().getText().contains("Tahiru")||sales.orderOverviewClientName().getText().contains("NewClient TestingTesting") || sales.orderOverviewClientName1().getText().contains("NewClient TestingTesting"));
 	        assert(sales.orderDetailsChefName().getText().equals("Jest Shef"));
 		} catch (Exception e) {
@@ -398,6 +400,37 @@ public class SalesPage extends TestBase{
    		assertTrue (sales.pageTitle().getText().startsWith("Order")); 
     }
 
+    @Then("^validate Thursday orders as well$")
+    public void validate_thursday_orders_as_well() throws Throwable {
+        
+	       if(dayOfWeek == calendar.THURSDAY) {
+    	Thread.sleep(time);
+	    	   sales.orderOverviewCopyButton().click();
+	    	   waitHelper.WaitForElement(sales.orderDeliveryDateDropdown(), 10);
+	    	   sales.orderDeliveryDateDropdown().click();
+	    	   String today = sales.deliveryDayToday().getText();
+	    	   int dateOfToday = Integer.parseInt(today);
+	    	   
+	          sales.deliveryDays().get(dateOfToday + 1).click();
+	          
+	          sales.orderSaveButton().click();
+	          
+	          
+	    	   waitHelper.WaitForElement(sales.orderOverviewCopyButton(), 10);
+
+	    	   sales.orderOverviewCopyButton().click();
+	    	   waitHelper.WaitForElement(sales.orderDeliveryDateDropdown(), 10);
+	    	   sales.orderDeliveryDateDropdown().click();
+	    	    today = sales.deliveryDayToday().getText();
+	    	    dateOfToday = Integer.parseInt(today);
+	    	   
+	          sales.deliveryDays().get(dateOfToday + 2).click();
+	          
+	          sales.orderSaveButton().click();
+	          
+	          
+	      }
+    }
     
     
     @Then("^i should navigate to the sales page and be able to search for orders by \"([^\"]*)\"$")
@@ -520,12 +553,7 @@ public class SalesPage extends TestBase{
       
 
     	sales.orderDeliveryDateDropdown().click();
-      
-        	System.out.println(sales.calendarMonth().getText());
-        	
-        	sales.nextMonthArrow().get(0).click();
-        	Thread.sleep(time1);
-        	sales.nextMonthArrow().get(0).click();
+        sales.nextMonthArrow().get(0).click();
         	/*
        	 JavascriptExecutor jse = (JavascriptExecutor)driver;
 	       jse.executeScript("window.scrollBy(0,2000)", "");*/
@@ -533,20 +561,7 @@ public class SalesPage extends TestBase{
 
     @And("^i set the delivery day \"([^\"]*)\"$")
     public void i_set_the_delivery_day_something(String strArg1) throws Throwable {
-    	try {
-    		try {
-				
-                driver.findElement(By.cssSelector("div.dayContainer:nth-child(2) > span:nth-child(11)")).click();
-
-			} catch (Exception e) {
-				sales.calenderDay().get(10).click();
-
-			}
-
-		} catch (Exception e) {
-
-            driver.findElement(By.linkText("10")).click();
-		}
+        sales.deliveryDayToday().click();
     }
 
     
@@ -638,9 +653,17 @@ public class SalesPage extends TestBase{
  	        int today = Integer.parseInt(date);
  	        
  	        System.out.println(today);
+ 	        
+ 	       if(dayOfWeek == calendar.FRIDAY) {
+  	          sales.deliveryDays().get(today + 2).click();
+ 	       }else {
+  	          sales.deliveryDays().get(today).click();
+
+ 	       }
  	          
  	          
- 	          sales.deliveryDays().get(today).click();
+ 	          
+ 	          
 		} catch (Exception e) {
 			 String date = sales.deliveryDayToday().getText();
  	     	while(date == "")
@@ -655,7 +678,13 @@ public class SalesPage extends TestBase{
  	        System.out.println(today);
  	          
  	          
- 	          sales.deliveryDays().get(today).click();
+ 	       if(dayOfWeek == calendar.FRIDAY) {
+   	          sales.deliveryDays().get(today + 2).click();
+  	       }else {
+   	          sales.deliveryDays().get(today).click();
+
+  	       }
+ 	       
 		}
     	          
     	          
@@ -666,8 +695,12 @@ public class SalesPage extends TestBase{
 	        
 	        System.out.println(twoDays);
 	          
-	          
-	          sales.nextMonthDays().get(twoDays).click();
+	        if(dayOfWeek == calendar.FRIDAY) {
+		          sales.nextMonthDays().get(twoDays).click();
+	 	       }else {
+	 	          sales.nextMonthDays().get(twoDays + 2).click();
+
+	 	       }
 	}
     }
     
@@ -716,6 +749,19 @@ public class SalesPage extends TestBase{
     @And("^i enter service instructions \"([^\"]*)\"$")
     public void i_enter_service_instructions_something(String strArg1) throws Throwable {
         sales.orderServiceInstructions().sendKeys(strArg1);
+    }
+
+    @And("^i change the first entree quantity \"([^\"]*)\"$")
+    public void i_change_the_first_entree_quantity(String strArg1) throws Throwable {
+    	sales.orderFirstItemQTY().sendKeys(Keys.BACK_SPACE);
+        sales.orderFirstItemQTY().sendKeys(strArg1);
+    }
+    
+    @And("^i change the second entree quantity \"([^\"]*)\"$")
+    public void i_change_the_second_entree_quantity(String strArg1) throws Throwable {
+    	sales.orderSecondItemQTY().sendKeys(Keys.BACK_SPACE);
+
+        sales.orderSecondItemQTY().sendKeys(strArg1);
     }
 
     
@@ -1264,6 +1310,56 @@ public void i_enter_custom_side_name(String arg1) throws Throwable {
 }
 
     
-    
+@Then("^i should successfully cancel the order$")
+public void i_should_successfully_cancel_the_order() throws Throwable {
+	
+	sales.cancelConfirmation().getText().contains("canceled");
+	
+}
+
+
+@Then("^i should successfully create the order$")
+public void i_should_successfully_create_the_order() throws Throwable {
+	
+	sales.createdFromCancelConf().getText().contains("created");
+
+}
+
+
+@And("^i select cancel from the status dropdown$")
+public void i_select_cancel_from_the_status_dropdown() throws Throwable {
+	
+	Thread.sleep(3000);
+	jse.executeScript("window.scrollBy(0,150)", "");
+	Thread.sleep(3000);
+
+	jse.executeScript("arguments[0].scrollIntoView(true);",sales.orderOverviewOrderNumber() );
+	WebElement status = driver.findElement(By.className("form-control"));
+	mouse.moveToElement(status).click();
+	WebElement cancel = status.findElement(By.xpath("//*[.=\"canceled\"]"));
+	cancel.click();
+	System.out.println(status.getText());
+	Thread.sleep(3000);
+
+}
+
+@When("^i select create from the status dropdown$")
+public void i_select_create_from_the_status_dropdown() throws Throwable {
+	Thread.sleep(3000);
+	jse.executeScript("window.scrollBy(0,150)", "");
+	Thread.sleep(3000);
+
+	jse.executeScript("arguments[0].scrollIntoView(true);",sales.orderOverviewOrderNumber() );
+	WebElement status = driver.findElement(By.className("form-control"));
+	mouse.moveToElement(status).click();
+	WebElement cancel = status.findElement(By.xpath("//*[.=\"created\"]"));
+	cancel.click();
+	System.out.println(status.getText());
+	Thread.sleep(3000);
+}
+
+
+
+
 
 }

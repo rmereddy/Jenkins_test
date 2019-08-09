@@ -38,7 +38,7 @@ public class customizeMenuSmoke extends TestBase{
     @Given("^i am on the customize menu page$")
     public void i_am_on_the_customize_menu_page() throws Throwable {
         cus.chefName().isDisplayed();
-        Thread.sleep(time);
+        Thread.sleep(time2);
     }
 
     
@@ -49,7 +49,7 @@ public class customizeMenuSmoke extends TestBase{
     	cus.zipCode().click();
         cus.zipCode().sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         cus.zipCode().sendKeys("20001");
-        Thread.sleep(time);
+        Thread.sleep(time1);
 
     }
 
@@ -97,12 +97,130 @@ public class customizeMenuSmoke extends TestBase{
         Thread.sleep(time1);
 
     }
+    
+    
+    @And("^i enter my portions count$")
+    public void i_enter_my_portions_count() throws Throwable {
+    	cus.howMany().click();
+    	String howmany = "100";
+       cus.howMany().sendKeys(howmany);
+       Thread.sleep(time1);
+       
+       for(int i = 1; i < 20; i++) {
+    	   
+        	cus.numberOfPortions().sendKeys(Keys.BACK_SPACE);
+        	cus.numberOfPortions().sendKeys(Keys.BACK_SPACE);
+        
+        	
+    	    cus.numberOfPortions().sendKeys(Integer.toString(i));
+    	    
+    	    if(i == 1) {
+    	    	System.out.println("rec is " + cus.recomendedPortions().getText());
+    	    	System.out.println("how many is " + howmany);
+    	    	assert(cus.recomendedPortions().getText().equals(howmany + " portions."));
+    	    }else {
+    	    	
+    	    	// recomemded portions should be 20% more than half head count 
+    	    	
+    	    		double calc = Integer.parseInt(howmany)/i;
+    	    		System.out.println("calc is " + calc);
+
+    	    		calc /= 100;
+        	    	System.out.println("calc is " + calc);
+
+        	    	calc *= 20;
+        	    	System.out.println("calc is " + calc);
+
+    	    		calc += Integer.parseInt(howmany)/i;
+        	    	System.out.println("calc is " + calc);
+
+        	    	int calcRounded = (int) Math.ceil(calc);
+        	    	System.out.println("================");
+
+        	    	
+    	    	
+    	    		System.out.println("rec is " + cus.recomendedPortions().getText());
+        	    	System.out.println("calc is " + calcRounded);
+        	    	System.out.println("================");
+        	    	
+        	    	if(calcRounded < 8) {
+        	    		
+        	    		assert(cus.recomendedPortions().getText().equals("8 portions."));
+        	    		
+        	    	}else {
+        	    		assert(cus.recomendedPortions().getText().equals(Integer.toString(calcRounded) + " portions.")
+                	    		|| cus.recomendedPortions().getText().equals(Integer.toString(calcRounded - 1) + " portions.")
+                	    		|| cus.recomendedPortions().getText().equals(Integer.toString(calcRounded + 1) + " portions."));
+        	    	}
+
+        	    	
+    	    }
+    	  
+       }
+       
+    }
+       
+       
 
     @And("^i enter my head count$")
     public void i_enter_my_head_count() throws Throwable {
     	cus.howMany().click();
-       cus.howMany().sendKeys("10");
+    	String howmany = "100";
+       cus.howMany().sendKeys(howmany);
        Thread.sleep(time1);
+       
+       for(int i = 1; i < 5; ) {
+        	cus.numberOfPortions().sendKeys(Keys.BACK_SPACE);
+
+    	    cus.numberOfPortions().sendKeys(Integer.toString(i));
+    	    
+    	    if(i == 1) {
+    	    	System.out.println("rec is " + cus.recomendedPortions().getText());
+    	    	System.out.println("how many is " + howmany);
+    	    	assert(cus.recomendedPortions().getText().equals(howmany + " portions."));
+ 	    	   i += i;
+
+    	    }else {
+    	    	
+    	    	// recomemded portions should be 20% more than half head count 
+    	    	
+    	    		double calc = Integer.parseInt(howmany)/i;
+    	    		System.out.println("calc is " + calc);
+
+    	    		calc /= 100;
+        	    	System.out.println("calc is " + calc);
+
+        	    	calc *= 20;
+        	    	System.out.println("calc is " + calc);
+
+    	    		calc += Integer.parseInt(howmany)/i;
+        	    	System.out.println("calc is " + calc);
+
+        	    	int calcRounded = (int) Math.ceil(calc);
+        	    	System.out.println("================");
+
+        	    	
+    	    		
+    	    		
+    	    		System.out.println("rec is " + cus.recomendedPortions().getText());
+        	    	System.out.println("calc is " + calcRounded);
+        	    	System.out.println("================");
+
+        	    	if(calcRounded < 8) {
+        	    		
+        	    		assert(cus.recomendedPortions().getText().equals("8 portions."));
+        	    		
+        	    	}else {
+        	    		assert(cus.recomendedPortions().getText().equals(Integer.toString(calcRounded) + " portions.")
+                	    		|| cus.recomendedPortions().getText().equals(Integer.toString(calcRounded - 1) + " portions.")
+                	    		|| cus.recomendedPortions().getText().equals(Integer.toString(calcRounded + 1) + " portions."));
+        	    	}
+        	    	
+        	    	   i += i;
+
+    	    }
+    	  
+       }
        
 
 
@@ -137,13 +255,14 @@ public class customizeMenuSmoke extends TestBase{
     public void i_enter_my_first_entree_quantity() throws Throwable {
 
 
+    	waitHelper.WaitForElement(cus.entreeQTY().get(0), 10);
     	
-    	cus.entreeQTY().get(1).click();
-    	Thread.sleep(time1);
-    	cus.entreeQTY().get(1).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-        Thread.sleep(time1);
+    	cus.entreeQTY().get(0).click();
+    	//Thread.sleep(time1);
+    	cus.entreeQTY().get(0).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+       // Thread.sleep(time1);
 
-    	cus.entreeQTY().get(1).sendKeys("8");
+    	cus.entreeQTY().get(0).sendKeys("8");
           Thread.sleep(time1);
 
         
@@ -155,13 +274,16 @@ public class customizeMenuSmoke extends TestBase{
 
     @And("^i enter my second entree quantity$")
     public void i_enter_my_second_entree_quantity() throws Throwable {
-        cus.secondEntreeQTY().click();
-        Thread.sleep(time1);
+    	cus.entreeQTY().get(1).click();
+    //	Thread.sleep(time1);
+    	cus.entreeQTY().get(1).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+    //    Thread.sleep(time1);
+
+    	cus.entreeQTY().get(1).sendKeys("8");
+          Thread.sleep(time1);
+
         
-        cus.secondEntreeQTY().sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
-        
-        cus.secondEntreeQTY().sendKeys("8");
-        Thread.sleep(time1);
+
 
     }
 

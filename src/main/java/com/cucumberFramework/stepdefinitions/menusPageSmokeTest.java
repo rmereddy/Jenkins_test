@@ -81,9 +81,10 @@ public class menusPageSmokeTest extends TestBase{
          	}
           	
 		} catch (Exception e) {
-			Thread.sleep(time1);
 
             menu.searchBox().sendKeys("Chef Jest");
+			Thread.sleep(time1);
+
 		}
      	
 
@@ -311,7 +312,7 @@ public void i_should_be_to_see_the_chefs_bio() throws Throwable {
     @And("^i should be able to select my prefered menu$")
     public void i_should_be_able_to_select_my_prefered_menu() throws Throwable {
     	
-    	Thread.sleep(time);
+    	Thread.sleep(time2);
     	System.out.println(menu.chefName().getText());
     	assert(menu.chefName().getText().equals("Chef Jest"));
         menu.chefPicture().click();

@@ -49,7 +49,7 @@ public class ClientPortal {
 	By forgotPassword = By.className("blue-link");
 	By saveProfileConfirmation = By.cssSelector(".alert-container");
 	By editProfile = By.cssSelector("#app > div > div.admin-outer-container > div.admin-container > div.admin-sidebar-container > ul > li.sidebar-profile > a");
-	By myAccount = By.cssSelector("#app > div > div.homepage-container > header > nav > div:nth-child(6) > a");
+	By myAccount = By.cssSelector("#app > div > div.homepage-container > header > nav > div:nth-child(7) > a");
 	By customizeLink = By.id("customize-order");
 	By orderAgainLink = By.id("order-again");
 	

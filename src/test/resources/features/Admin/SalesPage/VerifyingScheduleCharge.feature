@@ -27,6 +27,14 @@ And i accept delete
 Then i should successfully delete the order
 
 
+Scenario: verify canceled order on chef dash
+Given i navigate to the chef dashboard login page
+When i enter the username
+And i enter the password
+And i click on login button
+Then i should successfully login to the chef dashboard
+Then i should validate canceled order on chef dash and clear it from my orders
+
 
 Scenario: verify client survey email
 Given i navigate to the client test email "https://mail.protonmail.com/login"

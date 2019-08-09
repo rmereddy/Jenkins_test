@@ -1,5 +1,6 @@
 @orderAgainLink @myAccount @MarketplaceEnd2End @regression @smoke
-Feature: In order for a user to be able to customize/update their order, the user with valid login
+Feature: Order again link
+In order for a user to be able to customize/update their order, the user with valid login
 has to navigate to their account portal, locate the order and use the customize link to update the order
 
 

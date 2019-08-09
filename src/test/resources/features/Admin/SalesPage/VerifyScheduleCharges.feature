@@ -14,7 +14,7 @@ Given i am on the admin homepage
 When i click on the sales link
 Then i should successfuly navigate to the sales page
 
-Scenario: verify chef order details email
+Scenario: verify scheduled charges
 Given i am on the sales page
 When i click on the add new order button
 And i select the sales rep "Tahiru Nasuru"

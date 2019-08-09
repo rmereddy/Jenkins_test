@@ -1,5 +1,6 @@
 @changePassword @myAccount @MarketplaceEnd2End @regression
-Feature: In order for a user to be able to change their password
+Feature: change password
+ In order for a user to be able to change their password
 the user has to navigate to their account profile and use the password tab to change their password
 
 

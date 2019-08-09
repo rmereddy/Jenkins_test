@@ -80,6 +80,8 @@ public void i_click_on_my_location() throws Throwable {
 //	  homepage.seeMenusButton().click();
 
 	mouse.moveToElement(homepage.menusButton()).perform();
+	waitHelper.WaitForElement(homepage.menusDC(), 10);
+
 	homepage.menusDC().click();
 	
 	    

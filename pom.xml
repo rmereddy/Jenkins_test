@@ -1096,6 +1096,67 @@
 </profile>
 
 
+
+<profile>
+<id>dailyTest</id>
+
+<build>
+		<plugins>
+		  <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+           <artifactId>maven-compiler-plugin</artifactId>
+           <version>3.6.1</version>
+           <configuration>
+           <source>1.8</source>
+           <target>1.8</target>
+           </configuration>
+            </plugin>
+   
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+				<testFailureIgnore>true </testFailureIgnore>
+					<suiteXmlFiles>
+					<!-- src/test/resources/testSuites/testng.xml -->
+						<suiteXmlFile>DailyTest.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.8.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<!-- <phase>verify</phase> -->
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>MyProjectName</projectName>  <!-- Replace with project name -->
+							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+							<buildNumber>1</buildNumber>
+							<parallelTesting>false</parallelTesting>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</profile>
+
+
+
 </profiles>
 
 

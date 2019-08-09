@@ -99,7 +99,9 @@ public class adminSalesPage {
 	By orderDetailsOrangeSendOrderDetailsToChefsPanel2= By.xpath("#showOrderOverviewDiv > div.alert-banner-container > div:nth-child(1) > div.action-panel.chef-panel.panel.panel-success > div.panel-heading > div > a");
 	By salesPageTitle = By.cssSelector(".page-title");
 	By orderDetailsOrderNumber = By.cssSelector("div.tab-content-column__single:nth-child(1) > div:nth-child(1) > span:nth-child(2) > span:nth-child(2)");
-	By orderDetailsStatusSelect = By.cssSelector("span.list-group-item:nth-child(13) > span:nth-child(2) > div:nth-child(1) > div:nth-child(1) > select:nth-child(1)");
+	By orderDetailsStatusSelect = By.className("form-control");
+	By cancelConfirmation = By.cssSelector("div:nth-child(1) div.alert-container:nth-child(1) div:nth-child(1) div.alert-container__inner.alert-success.false > p:nth-child(1)");
+	By createdFromCancelConf = By.cssSelector("div:nth-child(1) div.alert-container:nth-child(1) div:nth-child(1) div.alert-container__inner.alert-success.false > p:nth-child(1)");		
 	By orderDetailsEditButton = By.cssSelector(".page > center:nth-child(1) > button:nth-child(1)");
 	By orderDetailsCopyButton = By.cssSelector(".page > center:nth-child(1) > button:nth-child(2)");
 	By orderDetailsDeleteButton = By.cssSelector(".button-alert");
@@ -205,9 +207,7 @@ public class adminSalesPage {
 	By customDesert = By.xpath("//span[contains(text(),'Add Custom Dessert Item')]");
 	By customDrink = By.xpath("//span[contains(text(),'Add Custom Drink Item')]");
 	By customServiceItem = By.xpath("//span[contains(text(),'Add Custom Service Item')]");
-	By minusSign = By.className("minus-sign");
-	
-
+	By minusSign = By.className("minus-sign");	
 
 	
 	
@@ -220,6 +220,17 @@ public class adminSalesPage {
 	public WebElement chargeClientPanelNoPaymentMethodText  ()
 	{
 		return driver.findElement(chargeClientPanelNoPaymentMethodText  );
+	}
+	
+	
+	public WebElement cancelConfirmation  ()
+	{
+		return driver.findElement(cancelConfirmation  );
+	}
+	
+	public WebElement createdFromCancelConf  ()
+	{
+		return driver.findElement(createdFromCancelConf  );
 	}
 	
 	

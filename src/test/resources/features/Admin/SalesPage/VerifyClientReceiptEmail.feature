@@ -20,7 +20,7 @@ Scenario: pay order via ACH
 Given i am on the sales page
 When i click on the add new order button
 And i select the sales rep "Tahiru Nasuru"
-And i select customer account "This is a test"
+And i select customer account "This is a test by Tahiru"
 And i select customer delivery address
 And i choose a payment method
 And i set the delivery month "February"
@@ -34,6 +34,12 @@ And i enter the first entree quantity
 And i enter the second entree quantity
 And i click save order
 Then i should successfully place my order
+
+
+
+Scenario: pay via ACH to verify receipt email
+Given i am on the sales page
+When i search for the order
 And i click on the invoice panel
 And i select the "ACH" as the payment source
 And i click the pay via external method button

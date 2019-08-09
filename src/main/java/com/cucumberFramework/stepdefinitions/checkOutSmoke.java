@@ -54,7 +54,7 @@ public class checkOutSmoke extends TestBase{
 	    @Then("^i should succesfully place my order$")
 	    public void i_should_succesfully_place_my_order() throws Throwable {
 
-	    	waitHelper.WaitForElement(checkout.orderConfirmation(), 10);
+	    	waitHelper.WaitForElement(checkout.orderConfirmation(), 30);
 	    	String actual = checkout.orderConfirmation().getText();
 	    	
 	         assert(actual.startsWith("Your Order"));

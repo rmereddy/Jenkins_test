@@ -22,7 +22,7 @@ When i click on a menu card
 And i change menu card status to live and approved
 And i click save
 
-
+@portionsGuide
 Scenario: Verifying the high level customize menu features to make sure they function properly
 Given i navigate to "https://staging.tryhungry.com/"
 When i click on menus or seeMenus
@@ -35,8 +35,8 @@ When i enter my zip code
 And i enter my prefered date
 And i enter my head count
 And i i enter my set up time
-#And i enter my first entree quantity
-#And i enter my second entree quantity
+And i enter my first entree quantity
+And i enter my second entree quantity
 #And i enter my first sides quantity
 #And i enter my drinks
 #And i enter my drinks quantity
@@ -51,6 +51,19 @@ Then i should be navigated to the checkout page
 And i should be able to navigate back to the customize menu page to make changes
 
 
+@portionsGuide
+Scenario: Verifying the high level customize menu features to make sure they function properly
+Given i navigate to "https://staging.tryhungry.com/"
+When i click on menus or seeMenus
+And i click on my location
+Then i should be navigated to the hungry choose a menu page
+And i should be able to filter menus by chef
+And i should be able to select my prefered menu
+Given i am on the customize menu page
+And i enter my portions count
+And i i enter my set up time
+And i enter my first entree quantity
+And i enter my second entree quantity
 
 
 
